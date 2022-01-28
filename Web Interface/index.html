@@ -1,0 +1,96 @@
+<div class="jumbotron">
+    <h1 class="text-center display-4">Calculate your Interest</h1>
+    <hr>
+
+    <!-- Create UI for Agreement Type Selection -->
+
+    <div class="container" div="compound-interest ">
+        <h3>Choose your Interest agreement type</h3>
+        <p class="Types">Calculate your Interest Percentage based on your Agreement Type</p>
+        <form id="agreement">
+          <div class="form-group">
+            <label for="repoRate">Repo Rate</label>
+            <input type="text" class="form-control" id="repoRate" placeholder="Enter your Repo Rate: ">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="mortageAgrements">Mortage Agreements</label>
+            <input type="radio" name="agreementType" class="form-control" id="mortageAgrements">
+          <div class="form-group">
+            <label for="creditFacilities">Credit Facilities</label>
+            <input type="radio" name="agreementType" class="form-control" id="creditFacilities">
+          </div>
+          <div class="form-group">
+            <label for="unsecuredCredit">Unsecured Credit Transactions</label>
+            <input type="radio" name="agreementType" class="form-control" id="unsecuredCredit">
+          </div>
+          <div class="form-group">
+            <label for="smallBusiness">Developmental credit agreements For development of a small business</label>
+            <input type="radio" name="agreementType" class="form-control" id="smallBusiness">
+          </div>
+          <div class="form-group">
+            <label for="lowHousing">Developmental credit agreements For low income housing (unsecured)</label>
+            <input type="radio" name="agreementType" class="form-control" id="lowHousing">
+          </div>
+          <div class="form-group">
+            <label for="shortTerm">Short Term Credit Transactions</label>
+            <input type="radio" name="agreementType" class="form-control" id="shortTerm">
+          </div>
+          <div class="form-group">
+            <label for="otherCredit">Other Credit Agreements</label>
+            <input type="radio" name="agreementType" class="form-control" id="otherCredit">
+          </div>
+          <div class="form-group">
+            <label for="incidentalCredit">Incidental Credit Agreements</label>
+            <input type="radio" name="agreementType" class="form-control" id="incidentalCredit">
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary" id="btnPercentage" onclick="calculatePercentage()">Submit</button>
+          <br>
+          <br>
+
+          <!-- Display interest persentage in this text field -->
+
+          <div class="form-group">
+            <label for="percentage">Your Interest percentage is: </label>
+            <input type="text" class="form-control" id="percentage" readonly>
+          </div>
+        </form>
+        <div class="text-center">
+          <input class="btn btn-secondary btn-lg" type="button" value="Reset" onClick="document.getElementById('agreement').reset()">
+        </div>
+      </div>
+      <hr>
+
+      <!-- Create UI for Interest Calculation -->
+
+    <div class="container" div="compound-interest ">
+      <h3>Compound Interest</h3>
+      <p class="lead">Return Interest amount = (Start Amount * Interest percentage from formula / 100)  * (days between start and end date passed in)  / 365</p>
+      <form id="interest">
+        <div class="form-group">
+          <label for="startAmount">Start Amount</label>
+          <input type="text" class="form-control" id="startAmount" placeholder="Enter your start amount: ">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="percentage">Interest Percentage</label>
+          <input type="text" class="form-control" id="percentage" placeholder="Example: 7%">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="termCompound">Term of Loan</label>
+          <input type="text" class="form-control" id="termCompound" placeholder="Example: 2 (must be in terms of years)">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" id="btnCompound" onclick="compoundInterest()">Submit</button>
+      </form>
+      <div>
+        <p class="lead mt-3" id="output1"></p>
+        <p class="lead mb-3" id="output2"></p>
+      </div>
+      <div class="text-center">
+        <input class="btn btn-secondary btn-lg" type="button" value="Reset" onClick="document.getElementById('interest').reset()">
+      </div>
+    </div>
+  </div>
